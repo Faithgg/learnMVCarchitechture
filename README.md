@@ -1,42 +1,21 @@
 # Adoptez une architecture MVC en PHP
 
-Voici le dépôt Git qui sert de support au cours **Adoptez une architecture MVC en PHP**. À partir de ce dépôt, vous pourrez récupérer le code source, situé dans le dossier `blog/`, à chaque étape de l'avancement du projet.
-
-Nous vous fournissons une liste de liens Github, dans la section [Étapes](#etapes) de ce document, vers chacune des étapes _précédentes_. Aussi, pour trouver une étape future, vous devrez obligatoirement repasser par la [dernière étape](https://github.com/OpenClassrooms-Student-Center/4670706-architecture-mvc-php). Si vous souhaitez naviguer dans les étapes directement depuis votre dépôt local, sachez que ce dépôt utilise l'[étiquettage Git](https://git-scm.com/book/fr/v2/Les-bases-de-Git-%C3%89tiquetage) pour définir chaque étape.
-
-Ce document vous fournira aussi quelques astuces et informations sur la manière d'installer le projet.
-
-## Étapes
-
-* [Appréhendez les limites d'un code de débutant](https://github.com/OpenClassrooms-Student-Center/4670706-architecture-mvc-php/tree/apprehendez-limites-code-debutant)
-* [Isolez l'affichage du traitement PHP](https://github.com/OpenClassrooms-Student-Center/4670706-architecture-mvc-php/tree/isolez-affichage-traitement-php)
-* [Isolez l'accès aux données](https://github.com/OpenClassrooms-Student-Center/4670706-architecture-mvc-php/tree/isolez-acces-donnees)
-* [Soignez la cosmétique](https://github.com/OpenClassrooms-Student-Center/4670706-architecture-mvc-php/tree/soignez-cosmetique)
-* [Affichez des commentaires](https://github.com/OpenClassrooms-Student-Center/4670706-architecture-mvc-php/tree/affichez-commentaires)
-* [Créez un template de page](https://github.com/OpenClassrooms-Student-Center/4670706-architecture-mvc-php/tree/creez-template-page)
-* [Créez un routeur](https://github.com/OpenClassrooms-Student-Center/4670706-architecture-mvc-php/tree/creez-routeur)
-* [Ajoutez des commentaires](https://github.com/OpenClassrooms-Student-Center/4670706-architecture-mvc-php/tree/ajoutez-commentaires)
-* [Gérez les erreurs](https://github.com/OpenClassrooms-Student-Center/4670706-architecture-mvc-php/tree/gerez-erreurs)
-* [Structurez vos données](https://github.com/OpenClassrooms-Student-Center/4670706-architecture-mvc-php/tree/structurez-donnees)
-* [Donnez vie à vos structures](https://github.com/OpenClassrooms-Student-Center/4670706-architecture-mvc-php/tree/donnez-vie-structures)
-* [Tirez parti de la composition](https://github.com/OpenClassrooms-Student-Center/4670706-architecture-mvc-php/tree/tirez-parti-composition)
-* [Utilisez les namespaces](https://github.com/OpenClassrooms-Student-Center/4670706-architecture-mvc-php/tree/utilisez-namespaces)
-* [Modifiez un commentaire](https://github.com/OpenClassrooms-Student-Center/4670706-architecture-mvc-php/tree/modifiez-commentaire)
-
 ## Installation
 
 ### Prérequis
 
 Tout d'abord, ce projet est fait pour fonctionner avec les dernières versions de PHP (actuellement `^8.0`). Il vous faudra donc l'installer sur votre machine.
 
-De plus, ce projet nécessite l'utilisation d'une base de données MySQL. Vous devrez donc installer ET configurer votre base de données, et créer un utilisateur. Si vous voulez vous rafraîchir la mémoire, vous pouvez relire le chapitre [Mettez en place une base de données avec phpMyAdmin](https://openclassrooms.com/fr/courses/918836-concevez-votre-site-web-avec-php-et-mysql/913893-mettez-en-place-une-base-de-donnees-avec-phpmyadmin) ! Par défaut, l'application utilise une base de données dénommée `blog`, accessible à un utilisateur `blog` dont le mot de passe est `password`.
+De plus, ce projet nécessite l'utilisation d'une base de données MySQL. Vous devrez donc installer ET configurer votre base de données, et créer un utilisateur.
+
+Par défaut, l'application utilise une base de données dénommée `learnMVC`, accessible à un utilisateur `root` dont le mot de passe est `'' (string vide)`.
 
 ### Configuration
 
 Une fois que vous avez installé votre serveur MySQL, vous pouvez remplacer les identifiants utilisés dans le code par les votre. Dans le fichier `blog/src/model.php`, à la ligne 5 :
 
 ```php
-$database = new PDO('mysql:host=localhost;dbname=blog;charset=utf8', 'blog', 'password');
+$database = new PDO('mysql:host=localhost;dbname=learnMVC;charset=utf8', 'root', '');
 ```
 
 Vous devriez aussi remplir votre base de données. Vous pouvez charger le schéma par défaut (et quelques données), contenu dans le fichier `db.sql`. Pour ce faire, vous pouvez utiliser votre interface d'administration MySQL, ou bien lancer la commande suivante, si vous êtes sous Linux :
